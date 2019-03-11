@@ -133,7 +133,8 @@ def display_in_thread(class_data, COLORS):
         fps_disp.update();
         text = "fps disp : {:.1f}".format(fps_disp.fps())
         cv2.putText(im_bgr, text, (int(wid * 0.4), hei - 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-        k = cv2.waitKey(0) & 0xFF
+        cv2.imshow('im_bgr', im_bgr)
+        k = cv2.waitKey(1) & 0xFF
         if k == 27: # esc key
             cv2.destroyAllWindow()
             class_data.end_of_caputre = True
