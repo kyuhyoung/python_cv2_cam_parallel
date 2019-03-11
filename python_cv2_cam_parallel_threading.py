@@ -147,6 +147,10 @@ def detect_in_thread(class_data, dir_yolo, th_confidence, th_nms_iou, LABEL):
     # derive the paths to the YOLO weights and model configuration
     #weightsPath = os.path.sep.join([args["yolo"], "yolov3.weights"])
     weightsPath = os.path.sep.join([dir_yolo, "yolov3.weights"])
+###########################################################################################  
+    #   download yolov3.weights into 'data' folder
+    #wget https://pjreddie.com/media/files/yolov3.weights
+###########################################################################################
     #configPath = os.path.sep.join([args["yolo"], "yolov3.cfg"])
     configPath = os.path.sep.join([dir_yolo, "yolov3.cfg"])
  
