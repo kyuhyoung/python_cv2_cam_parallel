@@ -2,5 +2,8 @@
 * python : 3.5.6
 * opencv : 3.4.3
 
-![fps_threading](./img/threading.png)
-![fps_multiprocessing](./img/multiprocessing.png)
+  * threading 사용시의 fps
+![fps_threading](./img/threading.PNG)
+
+  * multiprocessing 사용시의 fps
+![fps_multiprocessing](./img/multiprocessing.PNG)
