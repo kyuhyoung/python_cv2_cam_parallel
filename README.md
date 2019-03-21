@@ -10,4 +10,4 @@
   
   ![fps_multiprocessing](./img/multiprocessing.PNG)
   
-  ** I am not sure why. The biggest different is that detection thread of threading is faster than that of multiprocessing.  The others are almost the same.
+  I am not sure why. The biggest different is that detection thread of threading is faster than that of multiprocessing.  The others are almost the same.
