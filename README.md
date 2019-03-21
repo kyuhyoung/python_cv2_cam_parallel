@@ -3,7 +3,8 @@
 * opencv : 3.4.3
 
   * threading 사용시의 fps
-![fps_threading](./img/threading.PNG)
+  
+  ![fps_threading](./img/threading.PNG)
 
   * multiprocessing 사용시의 fps
-![fps_multiprocessing](./img/multiprocessing.PNG)
+  ![fps_multiprocessing](./img/multiprocessing.PNG)
