@@ -1,12 +1,19 @@
-# python_cv2_cam_parallel
+# comparision of frames rates(fps) of fetching / object detection / display of camera feed between using threading and multiprocessing
 * python : 3.5.6
 * opencv : 3.4.3
 
-  * threading 사용시의 fps
+  * frame rates when using threading
+    * fetch : 
+    * detection : 
+    * display : 
+    
   
   ![fps_threading](./img/threading.PNG)
 
-  * multiprocessing 사용시의 fps
+  * frame rates when using multiprocessing
+    * fetch : 
+    * detection : 
+    * display : 
   
   ![fps_multiprocessing](./img/multiprocessing.PNG)
   
