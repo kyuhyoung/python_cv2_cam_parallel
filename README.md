@@ -13,7 +13,7 @@
   * frame rates when using multiprocessing
     * fetch : 8.5
     * detection : 29.9
-    * display : 
+    * display : 1.6
   
   ![fps_multiprocessing](./img/multiprocessing.PNG)
   
