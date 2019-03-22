@@ -175,7 +175,7 @@ def display_in_thread(class_data_proxy, COLORS):
         fps_det = class_data_proxy.get_fps_det()
         if fps_det:
             text = "fps det : {:.1f}".format(fps_det)
-            print("fps det in display thread : {:.1f}".format(fps_det))
+            #print("fps det in display thread : {:.1f}".format(fps_det))
             cv2.putText(im_bgr, text, (int(wid * 0.35), hei - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 0, 0), 1)
         
         fps_fetch = class_data_proxy.get_fps_fetch()
@@ -352,5 +352,28 @@ def fetch_in_thread(class_data_proxy, fn_video_or_cam, len_li_rgb):
     #return class_data_proxy
 
 
+def init_detection():
+    
+
+    '''
+    #fn_video = "data/20190125_125054.mp4"
+    #fn_video = "C:/Users/kevin/Videos/sunny_moon/20190125_125054.mp4"
+    #fn_video = "data/test.mp4"
+    is_this_video = True
+    '''
+    fn_video = 0
+    dir_yolo = "data"
+
+    th_confidence = 0.5
+    th_nms_iou = 0.3
+
+    # load the COCO class labels our YOLO model was trained on
+    labelsPath = os.path.sep.join([dir_yolo, "coco.names"])
+    LABELS = open(labelsPath).read().strip().split("\n")
+ 
+    # initialize a list of colors to represent each possible class label
+    np.random.seed(42)
+    COLORS = np.random.randint(0, 255, size=(len(LABELS), 3), dtype="uint8")
+    return fn_video, dir_yolo, th_confidence, th_nms_iou, COLORS, LABELS
 
 
