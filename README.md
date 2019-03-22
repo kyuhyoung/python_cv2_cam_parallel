@@ -2,17 +2,17 @@
 * python : 3.5.6
 * opencv : 3.4.3
 
-  * frame rates when using threading
-    * fetch : 
-    * detection : 
-    * display : 
+  * frame rate when using threading
+    * fetch : 8.5
+    * detection : 29.9
+    * display : 3.4
     
   
   ![fps_threading](./img/threading.PNG)
 
   * frame rates when using multiprocessing
-    * fetch : 
-    * detection : 
+    * fetch : 8.5
+    * detection : 29.9
     * display : 
   
   ![fps_multiprocessing](./img/multiprocessing.PNG)
