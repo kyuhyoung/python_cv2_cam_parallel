@@ -17,7 +17,7 @@ thread_fetch.start()
 thread_detect  = Thread(target = detect_in_thread, args = (class_data, dir_yolo, th_confidence, th_nms_iou, LABELS))
 thread_detect.start()
 
-thread_display  = Thread(target = display_in_thread, args = (class_data, COLORS))
+thread_display  = Thread(target = display_in_thread, args = (class_data, COLORS, 'threading'))
 thread_display.start()
 
 thread_fetch.join()

@@ -20,7 +20,7 @@ class_data = manager.DataClass()
 
 pool = multiprocessing.Pool(multiprocessing.cpu_count())
 
-pool.apply_async(func = display_in_thread, args = (class_data, COLORS))
+pool.apply_async(func = display_in_thread, args = (class_data, COLORS, 'multiprocessing'))
 pool.apply_async(func = detect_in_thread, args = (class_data, dir_yolo, th_confidence, th_nms_iou, LABELS))
 pool.apply_async(func = fetch_in_thread, args = (class_data, fn_video, 8))
 

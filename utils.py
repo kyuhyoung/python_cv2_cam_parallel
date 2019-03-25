@@ -140,7 +140,7 @@ class Detection:
         self.confidence = confidence
 
 
-def display_in_thread(class_data_proxy, COLORS):
+def display_in_thread(class_data_proxy, COLORS, prephix):
 
     fps_disp = FPS().start()
     is_huda = False
@@ -179,6 +179,8 @@ def display_in_thread(class_data_proxy, COLORS):
             cv2.putText(im_bgr, text, (int(wid * 0.35), hei - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 0, 0), 1)
         
         fps_fetch = class_data_proxy.get_fps_fetch()
+        if prephix is not None:
+            cv2.putText(im_bgr, prephix, (int(wid * 0.35), 40), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 1)
         if fps_fetch is not None:
             text = "fps fetch : {:.1f}".format(fps_fetch)
             #print("fps fetch in display thread : {:.1f}".format(fps_fetch))
@@ -329,7 +331,8 @@ def fetch_in_thread(class_data_proxy, fn_video_or_cam, len_li_rgb):
             #print('im_bgr is retrived in fetch thread');
             is_huda = True
             #cv2.imshow("temp", im_bgr); cv2.waitKey(10000)
-            im_rgb = class_data_proxy.set_rgb(cv2.cvtColor(im_bgr, cv2.COLOR_BGR2RGB))
+            im_rgb = cv2.cvtColor(im_bgr, cv2.COLOR_BGR2RGB)
+            im_rgb = class_data_proxy.set_rgb(im_rgb)
             li_rgb.append(im_rgb)
             if len(li_rgb) >= len_li_rgb:
                 class_data_proxy.set_li_rgb(li_rgb)
