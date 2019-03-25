@@ -1,6 +1,6 @@
 # comparision of frames rates(fps) for fetching / object detection / display of camera feed between using threading and using multiprocessing of python
 * python : 3.5.6
-* opencv : 3.4.3
+* cv2 : 3.4.3
 
   * frame rate when using threading
     * fetch : 8.5
