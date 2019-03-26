@@ -16,14 +16,14 @@ class DataClass(object):
         #self.im_rgb_copy = 0
         self.fps_det = None
         self.fps_fetch = None
-        #'''        
+        '''        
         self.lock_rgb = Lock()
         #self.lock_bbox = Lock()
         self.lock_li_rgb = Lock()
         self.lock_li_det = Lock()
         self.lock_fps_det = Lock()
         self.lock_fps_fetch = Lock()
-        #'''
+        '''
 
     def get_eoc(self):
         return self.end_of_capture
@@ -61,41 +61,44 @@ class DataClass(object):
         return self.im_rgb
 
     def set_li_rgb(self, li_im_rgb):
-        with self.lock_li_rgb:
-            self.li_im_rgb = li_im_rgb
+        #with self.lock_li_rgb:
+        #    self.li_im_rgb = li_im_rgb
             #print('self.im_rgb is set by : ', str_from)
-        #self.li_im_rgb = li_im_rgb
+        self.li_im_rgb = li_im_rgb
+
     def get_li_rgb(self):
-        with self.lock_li_rgb:
-            return self.li_im_rgb
-        #return self.li_im_rgb
+        #with self.lock_li_rgb:
+        #    return self.li_im_rgb
+        return self.li_im_rgb
 
     def set_li_det(self, li_det):
-        with self.lock_li_det:
-            self.li_det = li_det
-        #self.li_det = li_det
+        #with self.lock_li_det:
+        #    self.li_det = li_det
+        self.li_det = li_det
+
     def get_li_det(self):
-        with self.lock_li_det:
-            return self.li_det
-        #return self.li_det
+        #with self.lock_li_det:
+        #    return self.li_det
+        return self.li_det
 
     def set_fps_det(self, fps_det):
-        with self.lock_fps_det:
-            self.fps_det = fps_det
-        #self.fps_det = fps_det
+        #with self.lock_fps_det:
+        #    self.fps_det = fps_det
+        self.fps_det = fps_det
+
     def get_fps_det(self):
-        with self.lock_fps_det:
-            return self.fps_det
-        #return self.fps_det
+        #with self.lock_fps_det:
+        #    return self.fps_det
+        return self.fps_det
 
     def set_fps_fetch(self, fps_fetch):
-        with self.lock_fps_fetch:
-            self.fps_fetch = fps_fetch
-        #self.fps_fetch = fps_fetch
+        #with self.lock_fps_fetch:
+        #    self.fps_fetch = fps_fetch
+        self.fps_fetch = fps_fetch
     def get_fps_fetch(self):
-        with self.lock_fps_fetch:
-            return self.fps_fetch
-        #return self.fps_fetch
+        #with self.lock_fps_fetch:
+        #    return self.fps_fetch
+        return self.fps_fetch
 
 
 
@@ -332,7 +335,7 @@ def fetch_in_thread(class_data_proxy, fn_video_or_cam, len_li_rgb):
             is_huda = True
             #cv2.imshow("temp", im_bgr); cv2.waitKey(10000)
             im_rgb = cv2.cvtColor(im_bgr, cv2.COLOR_BGR2RGB)
-            im_rgb = class_data_proxy.set_rgb(im_rgb)
+            class_data_proxy.set_rgb(im_rgb)
             li_rgb.append(im_rgb)
             if len(li_rgb) >= len_li_rgb:
                 class_data_proxy.set_li_rgb(li_rgb)
