@@ -2,7 +2,7 @@
 * python : 3.5.6
 * cv2 : 3.4.3
 
-  * Both frame rates of using threading and multiprocessing in my codes are almost the same. (I expected that multiprocessing would be fast. Point me if my usage of threading and/or multiprocessing is wrong !!).  The typical frame rates are as below.  
+  * Both frame rates of using threading and multiprocessing in my codes are almost the same. (I expected that multiprocessing would be faster. Point me if my usage of threading and/or multiprocessing is wrong !!).  The typical frame rates are as below.  
     * fetch : 8.5
     * detection : 29.9
     * display : 3.4
