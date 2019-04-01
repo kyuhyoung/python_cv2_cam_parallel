@@ -7,8 +7,8 @@
     * detection : 29.9
     * display : 3.4
     
-<!--  
   ![fps_threading](./img/threading.PNG)
+<!--  
 
   * frame rates when using multiprocessing
     * fetch : 8.5
