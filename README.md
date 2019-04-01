@@ -2,12 +2,12 @@
 * python : 3.5.6
 * cv2 : 3.4.3
 
-  * frame rate when using threading
+  * Both frame rates of using threading and multiprocessing in my codes are almost the same. (I expected that multiprocessing would be fast. Point me if my usage of threading and/or multiprocessing is wrong !!).  The typical frame rates are as below.  
     * fetch : 8.5
     * detection : 29.9
     * display : 3.4
     
-  
+<!--  
   ![fps_threading](./img/threading.PNG)
 
   * frame rates when using multiprocessing
@@ -18,3 +18,4 @@
   ![fps_multiprocessing](./img/multiprocessing.PNG)
   
   I am not sure why. The biggest different is that detection thread of threading is faster than that of multiprocessing.  The others are almost the same.
+-->
